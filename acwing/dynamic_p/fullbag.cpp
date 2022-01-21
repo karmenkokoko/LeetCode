@@ -1,5 +1,5 @@
 #include <iostream>
-
+// 完全背包
 using namespace std;
 
 const int N = 100010;
