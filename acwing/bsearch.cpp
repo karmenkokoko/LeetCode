@@ -29,6 +29,7 @@ int main()
             if(x <= arr[mid]) r = mid;
             else l = mid + 1;
         }
+        // 边界是l
         if(arr[l] != x) cout << "-1 -1" << endl;
         else{
             cout << l << " ";
