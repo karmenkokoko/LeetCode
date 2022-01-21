@@ -24,12 +24,11 @@ class Dictionary{
     private:
         size_t disks;
 };
-/*
-Dictionary::Dictionary()
-{
-    disks = tfs().numDisks();
-}
-*/
+
+// Dictionary::Dictionary()
+// {
+//     this.disks = tfs().numDisks();
+// }
 
 
 int main()

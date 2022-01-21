@@ -17,6 +17,7 @@ inline void callWithMax(const T& a, const T& b)
 class CostEstimate{
     private:
     // 以const对象 enums来替换#defines
+    // 不允许inclass设定初值
         static const double FudgeFactor;
 };
 
