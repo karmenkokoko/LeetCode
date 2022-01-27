@@ -29,7 +29,8 @@ const int N = 1010;
 int n, k;
 int g[N][N];
 bool st[N];
- 
+
+//
 int layer()
 {
     int depth = 0;
