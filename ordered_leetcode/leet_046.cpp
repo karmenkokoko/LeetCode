@@ -1,44 +1,38 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-// 全排列 任意数字 不重复
-// 去重要对元素进行排序，从而判断连续的两个数字是否想等
+// 全排列1
+// 给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
 
 class Solution {
 public:
     vector<vector<int>> res;
     vector<int> path;
+    set<int> st;
     vector<vector<int>> permuteUnique(vector<int> &nums)
     {
         int n = nums.size();
-        vector<bool> st(n, false);
-        sort(nums.begin(), nums.end());
-        dfs(nums, st);
-
+        path = vector<int>(n);
+        dfs(0, nums);
         return res;
     }
 
-    void dfs(vector<int> &nums, vector<bool> &st)
+    void dfs(int x, vector<int>& nums)
     {
-        if(path.size() == nums.size())
+        if(x == nums.size())
         {
-            res.push_back(path);
+            res.emplace_back(path);
             return;
         }
 
         for (int i = 0; i < nums.size(); i++)
         {
-            // 判断两个连续的数字是否相同
-            if(i > 0 && nums[i] == nums[i-1] && st[i-1] == false){
-                continue;
-            }
-            if(st[i] == false)
+            if(!st.count(i))
             {
-                st[i] = true;
-                path.push_back(nums[i]);
-                dfs(nums, st);
-                path.pop_back();
-                st[i] = false;
+                path[i] = nums[i];
+                st.insert(i);
+                dfs(x + 1, nums);
+                st.erase(i);
             }
         }
     }
