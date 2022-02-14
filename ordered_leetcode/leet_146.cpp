@@ -11,7 +11,7 @@ using namespace std;
 // 函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。
 
 
-// 双向链表，存储key和alue
+// 双向链表，存储key和value
 // 哈希表, 存储key和node
 
 class LRUCache{

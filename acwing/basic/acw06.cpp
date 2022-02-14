@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-
+// 二分求三次方根
 double n;
 
 int main()
