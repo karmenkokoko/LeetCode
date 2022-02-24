@@ -15,6 +15,7 @@ public:
             return 0;
         if(x == 1)
             return 1;
+        // 平方根范围一定在1, x/2之间
         int left = 1;
         int right = x / 2;
         while(right > left)
