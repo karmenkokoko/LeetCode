@@ -18,9 +18,11 @@ public:
         // 维护小根堆, 存右节点
         for (int i = 0; i < n; i++)
         {
+            // 如果说这个组最小的右端点比左端点大，那么说明是这个组的， 也就是说必须要加一个会议室
             if(!heap.size() || heap.top() > intervals[i][0])
                 heap.push(intervals[i][1]);
             else{
+            // 如果说最小的右端点比进来的左端点小，那么这个会议室可以给进来的那个用， 但这个会议室的结束时间改成新来的结束时间
                 heap.pop();
                 res--;
                 heap.push(intervals[i][1]);
