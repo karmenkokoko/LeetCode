@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
+// 二叉树变成链表
 
 class Solution{
 private:
