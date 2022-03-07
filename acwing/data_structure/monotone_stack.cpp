@@ -1,6 +1,5 @@
 // 单调栈 找出数列中每个数字之前比他小的第一个数
 
-
 #include <iostream>
 
 using namespace std;
