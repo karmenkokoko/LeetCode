@@ -40,9 +40,9 @@ int main()
         else
         {
             if(h[find(x)] == null)
-                printf("No");
+                printf("No\n");
             else
-                printf("Yes");
+                printf("Yes\n");
         }
     }
 

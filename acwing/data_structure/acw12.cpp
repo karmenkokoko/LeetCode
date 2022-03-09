@@ -14,6 +14,7 @@ int n, m;
 int p[N];
 int cnt[N];
 // 维护count的一个数组
+
 int find(int x)
 {
     if(x != p[x])
