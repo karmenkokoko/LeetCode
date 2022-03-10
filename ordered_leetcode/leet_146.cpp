@@ -82,8 +82,10 @@ public:
     // 加入头
     void add_to_head(DelistNode* Node)
     {
+        // 先加新节点
         Node->prev = forward;
         Node->next = forward->next;
+        // 然后改两边的节点
         forward->next->prev = Node;
         forward->next = Node;
     }
