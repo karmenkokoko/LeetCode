@@ -8,6 +8,7 @@ int bfs(string state)
 {
     queue<string> q;
     unordered_map<string, int> d;
+    // 用这个哈希表来存状态经过的距离
     string end = "12345678x";
     int dx[4] = {1, 0, -1, 0}, dy[4] = {0, 1, 0, -1};
     q.push(state);
@@ -27,6 +28,8 @@ int bfs(string state)
             if(a >= 0 && a < 3 && b >= 0 && b < 3)
             {
                 swap(t[3 * a + b], t[k]);
+                // 交换字母 存入哈希表
+                
                 if(!d[t])
                 {
                     d[t] = distance + 1;
