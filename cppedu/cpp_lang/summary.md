@@ -70,24 +70,30 @@
 
 * 获得资源后需要立即放进管理对象
 * 析构函数确保其被释放
-* 智能指针不要指向同一个对象
+* 智能指针不要指向同一个对象 autoptr, 指向同一对象后会被置为null
 * 计数型不能打破环状引用 shared ptr auto_ptr
 
 * RAII对象 复制时，可能会被抑制，或者采取计数法
 
 ### 显式转换对象
-* shared_ptr auto_ptr.get() 同样由指针取值操作符-> *
+* shared_ptr auto_ptr.get()  = 指针取值操作符->， * 
+* get是取指针里面的类型
 
 * 重要！！！！！！！！！！！！！！！！
 * new delete要成对相同！
 * new []      delete []
 
-* 多句生成智能指针
-std::tr1::shared_ptr<Widget> pw(new Widget);
-func(pw, priority)
+* 多句生成智能指针 不然可能会造成内存泄漏
+```
+    std::tr1::shared_ptr<Widget> pw(new Widget);
+    func(pw, priority)
+```
+## --------设计与声明------------
 
 * shared_ptr 自动的调用删除器
+```
 std::tr1::shared_ptr<investment> pt(static_cast<intvestment* >(0), shanchuqi);
+```
 
 * 阻止误用，类型，资源管理责任，束缚对象值
 

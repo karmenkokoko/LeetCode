@@ -10,7 +10,8 @@ int main()
     
   String s3(s2);
   cout << s3 << endl;
-  
+
+  s2 = s2.replace("ab", "");
   s3 = s1;
   cout << s3 << endl;     
   cout << s2 << endl;  
